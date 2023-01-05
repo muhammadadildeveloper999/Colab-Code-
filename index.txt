@@ -1,0 +1,412 @@
+2# Dictionary is nothing but key value pairs
+d1 = {}
+# print(type(d1))
+d2 = {"Harry":"Burger",
+      "Rohan":"Fish",
+      "SkillF":"Roti",
+      "Shubham":{"B":"maggie", "L":"roti", "D":"Chicken"}}
+# d2["Ankit"] = "Junk Food"
+# d2[420] = "Kebabs"
+# print(d2)
+# del d2[420]
+# print(d2["Shubham"])
+# d3 = d2.copy()
+# del d3["Harry"]
+# d2.update({"Leena":"Toffee"})
+# print(d2.keys())
+# print(d2.items())
+
+FUCTION
+import cv2
+import glob
+
+imdir = '/content/images'
+ext = ['png', 'jpg', 'gif']    # Add image formats here
+
+files = ['Test File 1.jpg,Test File 2.jpg,Test File 3.jpg,Test File 4.jpg,Test File 5.jpg']
+
+[files.extend(glob.glob(imdir + '*.' + e)) for e in ext]
+
+images = [cv2.imread(file) for file in files]
+
+FUCTION
+from skimage.io import imread_collection
+
+#your path 
+col_dir = 'G:\Django Projects & Practice\Django_Practice\images'
+
+#creating a collection with the available images
+col = imread_collection(col_dir)
+
+FUCTION
+import os
+folderPath = "/content/images"
+
+extensionList = ('jpg', 'heic', 'png', 'jpeg','jfif')
+
+ImageNames = ['Test File 1.jpg,Test File 2.jpg,Test File 3.jpg,Test File 4.jpg,Test File 5.jpg']
+
+for currentFileName in os.listdir(folderPath):
+      if currentFileName.endswith(extensionList):
+            print(currentFileName)
+      else:
+            continue
+
+FUCTION
+# count total number of digit
+
+num = 1
+while num <= 10:
+  print(num)
+  num = num+1
+
+FUCTION
+# pattern program
+
+rows = 5
+
+for i in range(rows):
+    for j in range(i+1):
+        print(j+1, end=" ")
+    print("\n")
+
+FUCTION
+# reverse counting in loop
+
+n = 123456789
+reverse = 0
+while n > 0 :
+  r = n % 10
+  reverse = (reverse*10)+r
+  n=n//10
+print(reverse)
+
+FUCTION
+# reverse counting in loop
+
+list1 = [-1,-2,-3,-4,-5,-6,-7,-8,-9,-0]
+print(list1[::-1])
+
+FUCTION
+# reverse counting in loop
+
+list1.reverse()
+print(list1)
+
+FUCTION
+# find the largest in a list
+
+def largenumber(number):
+  biggest_number=number[0]
+  for num in number:
+    if num > biggest_number:
+      biggest_number = num
+
+  return biggest_number
+print (largenumber([10,20,30,40,50]))
+
+FUCTION
+# factorial number
+
+# if__name__=='__name__'
+number = 10
+factorial = 1
+if(number<0):
+  print('Error: Factorial of a negitive number is not defined')
+elif(number==0):
+  print(1)
+else:
+  for i in range(1,number+1):
+    factorial = factorial* i
+print('The factorial of',number,'is',factorial)
+
+FUCTION
+# function in variable lenght of arguments
+
+def add(*values):
+
+  sum = 0
+  for numbers in values:
+    sum+=numbers
+  print('sum =', sum)
+add(5,5,5,5,5,50) 
+
+FUCTION
+# reverse counting in loop
+
+n = 123456789
+reverse = 0
+while n > 0 :
+  r = n % 10
+  reverse = (reverse*10)+r
+  n=n//10
+print(reverse)
+
+FUCTION
+# defult value function
+
+def show(name,age=27):
+  print(f'Name:{name}, Age : {age}')
+
+show(' Adil ', 18)  
+
+FUCTION
+# largest number from a list
+
+def largenumber(number):
+  biggest_number=number[0]
+  for num in number:
+    if num > biggest_number:
+      biggest_number = num
+
+  return biggest_number
+print (largenumber([10,20,30,40,50,80]))
+
+FUCTION
+# two list convert in to dictionary 
+
+a = ['ten','twenty','thirty']
+b = ['fourty','fifty','sixty']
+c =dict(zip(a,b))
+print(c)
+
+FUCTION
+# merge two python dictionaries in two one
+
+employes = {1:'michael', 2:'eric', 3:'jon'}
+new_hires = {4:'jon', 5:'eric'}
+
+employes.update(new_hires)
+employes
+
+FUCTION
+# acces values of key
+
+mystock ={
+    "Product" : "EarPhones",
+    'price' : "800",
+    'quality' :"50",
+    "InStock" : "Yes"
+ }
+
+print(mystock['Product'])
+print(mystock['InStock'])
+
+FUCTION
+# delete set of keys from a dictionary
+
+mystock ={
+    "Product" : "EarPhones",
+    'price' : "800",
+    'quality' :"50",
+    "InStock" : "Yes"
+ }
+
+del mystock["InStock"]
+del mystock["quality"] 
+print(mystock)
+
+FUCTION
+# rename dictionary value
+
+mydict ={
+    "name" : "Guido",
+    'lastname' : "Ven Russom",
+    'age' : '22',
+    'city' : "new_york"
+ }
+
+mydict ['age'] = 32
+print(mydict)
+
+FUCTION
+# find the min value from the dictionary
+
+income = {'Anna' : 9999,
+          'Berd' : 8888,
+          'Cara' : 7777,
+}
+print(min(income, key=income.get))
+
+
+FUCTION
+
+# update salary Brad,s
+
+sampledict = {
+    'emplyee1' :{'name':'Jhon','salary':7500},
+    'emplyee2' : {'name':'Emma','salary':8000},
+    'name:':'Brad','salary':6500
+}
+    
+sampledict['salary'] = 8500
+print(sampledict)
+
+FUCTION
+import pandas as pd
+mydata = {}
+
+data = pd.read_excel('myecg.xlsx') 
+
+ECG_ID= data['ECG_ID']
+mylabel= data['mylabel']
+
+for i in range(len(data['ECG_ID'])):
+    mydata[data['ECG_ID'][i]]=data['mylabel'][i]
+mydata
+
+FUCTION
+# import module
+import ntpath
+ 
+# used path style of both the UNIX
+# and Windows os to show it works on both.
+data = []
+paths = [
+    # "/content/Task/sample.py",
+    "/content/"]
+ 
+# empty array to store file basenames
+filenames = ['A00002.h5','A00085.h5', 'A00879.h5', 'A19090.h5']
+ 
+for path in paths:
+   
+    # used basename method to get the filename
+    filenames.append(ntpath.basename(path))
+ 
+# get names from the list
+for name in filenames:
+   
+    # finding the index where
+    # the last "." occurs
+    k = name.rfind(".")
+     
+    # printing the filename
+    # print(name[:k])
+    data.append(name[:k])
+
+data
+
+FUCTION
+for key,value in mydata.items():
+  if key in data:
+    print("key",key)
+  else:
+    None
+
+FUCTION
+import os 
+for value,key  in mydata.items():
+  print(key)
+
+FUCTION
+
+import os
+try:
+  for value,key  in mydata.items():
+    os.makedirs(key, exist_ok = True)
+    print("Directory '%s' created successfully" % key)
+except OSError as error:
+    print("Directory '%s' can not be created" % key)
+
+FUCTION
+for key,value in mydata.items():                                               
+  if key in data:
+      print(value) 
+
+FUCTION
+import os
+import shutil
+
+value = ['/content/']
+
+for key,value in mydata.items():
+    if key in datas:
+      allfiles = os.listdir(datas)
+    for f in allfiles:
+        src_path = os.path.join(datas, f)
+        dst_path = os.path.join(value, f)
+        shutil.move(src_path, dst_path)
+
+FUCTION
+pip install calender
+
+FUCTION
+import calendar
+year = 2002
+month = 2
+print(calendar.month(year,month))
+
+FUCTION
+list1 = [12, 15, 3, 10]
+result = 0
+for i in list1:
+  # Adding elements in the list using
+  # add function of operator module
+    result = add(i, result)
+# printing the result
+print(result) 
+
+FUCTION
+my_list = [2, 4, 6, 8]
+
+# ✅ sum using a for loop
+total = 0
+
+for num in my_list:
+    total += num
+
+print(total) 
+
+FUCTION
+from datetime import date
+import calendar
+Year= 5080
+A=calendar.TextCalendar(calendar.SUNDAY)
+# for b in range(1,13):
+    # for k in A.itermonthdays(Year,b):
+if k!=0:
+    day=date(Year,b,k)if day.weekday()==6:
+                print("%s,%d-%d-%d" % (calendar.day_name[6] ,k,b,Year))
+
+FUCTION
+
+import random
+number = random.randint(1800,2050)
+print(number)
+
+FUCTION
+import random
+number = random.randint(1800,2050)
+if (number%400 == 0):
+          print("%d is a Leap Year" %number)
+elif (number%100 == 0):
+          print("%d is Not the Leap Year" %number)
+elif (number%4 == 0):
+          print("%d is a Leap Year" %number)
+else:
+      print("%d is Not the Leap Year" %number)
+
+FUCTION
+import datetime as dt
+from datetime import datetime as da
+ 
+currentyear = dt.date(2022,10,9)
+print(currentyear)
+use = input("select your the year : ")
+new = da.strptime(use,'%Y').date()
+print(new.year)
+if new.year > currentyear.year:
+    dif = new.year - currentyear.year
+    remove = dif*10
+    day = currentyear+dt.timedelta(-remove)
+    a = day.month
+    print(f"12th_Rabiul_awal of the year {new.year} is", dt.date(new.year,day.month,day.day))
+
+FUCTION
+
+import datetime as dt
+# from datetime import datetime as da
+
+curryear = dt.date(2022,10,2)
+print(curryear)         
